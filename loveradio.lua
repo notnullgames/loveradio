@@ -4,7 +4,6 @@ local types = require('radio.types')
 
 local bufferSize = 1024
 local pointer = 0
-local buf = ffi.new('char[1024]')
 
 local LoveAudioSink = block.factory("LoveAudioSink")
 
@@ -25,6 +24,8 @@ function LoveAudioSink:instantiate(num_channels, samplingRate, bitDepth)
 
     self.sd = love.sound.newSoundData(bufferSize, samplingRate, bitDepth, num_channels)
     self.qs = love.audio.newQueueableSource(samplingRate, bitDepth, num_channels)
+    
+    -- use this like a buffer
     self.ptr = self.sd:getFFIPointer()
 end
 
