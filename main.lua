@@ -1,3 +1,4 @@
+-- example, with love-wrapping so it's easier to use
 local radio = require('radio')
 
 local ffi = require('ffi')

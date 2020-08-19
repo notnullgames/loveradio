@@ -1,3 +1,4 @@
+-- basic example, with no wrapping
 local radio = require('radio')
 local ffi = require('ffi')
 
