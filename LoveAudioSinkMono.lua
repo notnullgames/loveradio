@@ -35,9 +35,9 @@ local function LoveAudioSinkMono()
   end
   
   function realsink:release()
+    source:release()
     ffi.C.close(fds[0])
     ffi.C.close(fds[1])
-    source:release()
   end
   
   return realsink
